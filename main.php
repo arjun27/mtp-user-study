@@ -8,6 +8,47 @@
 
 ?>
 
+<script type="text/javascript">
+ buttonStatus = {}; // yes = 1, no = -1, neutral = 0
+
+ function yesClick ( pid ) {
+  updateStatus ( pid, 1 );
+ }
+
+ function noClick ( pid ) {
+  updateStatus ( pid, -1 );
+ }
+
+ function updateStatus ( pid, newStatus ) {
+  oldStatus = buttonStatus[pid];
+  if (newStatus == oldStatus) { // set to neutral
+    buttonStatus[pid] = 0;
+    updateColour ( pid );
+  } else {
+    buttonStatus[pid] = newStatus;
+    updateColour ( pid );
+  }
+ }
+
+ function updateColour ( pid ) {
+  newStatus = buttonStatus [pid];
+  yes = "#" + pid + "_yes";
+  no = "#" + pid + "_no";
+  $(yes).removeClass("btn-success");
+  $(no).removeClass("btn-danger");
+  if (newStatus == 0) {
+    $(yes).addClass("btn-default");
+    $(no).addClass("btn-default");
+  } else if (newStatus == 1) {
+    $(yes).addClass("btn-success");
+    $(no).addClass("btn-default");    
+  } else {
+    $(yes).addClass("btn-default");
+    $(no).addClass("btn-danger");       
+  }
+ }
+</script>
+
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="utf-8" />
@@ -22,7 +63,7 @@
   <!-- Custom styles for this template -->
   <link href="jumbotron-narrow.css" rel="stylesheet" type="text/css" />
   <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <!--[if lt IE 9]><script src="dist/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
   <script src="dist/js/ie-emulation-modes-warning.js" type="text/javascript">
 </script><!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
@@ -34,6 +75,8 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+  <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"> </script>
 </head>
 
 <body>
@@ -55,7 +98,7 @@
 
       <p class="lead">Do you think the pages are relevant to the query?</p>
 
-      <p><a class="btn btn-lg btn-warning" href="#">sci-fi movies</a></p>
+      <p><a class="btn btn-lg btn-warning" href="#">query text</a></p>
     </div>
 
     <div class="row marketing">
@@ -82,6 +125,11 @@
         $page_json_raw = file_get_contents('http://graph.facebook.com/'.$pid);
         $page_data = json_decode($page_json_raw);
         ?>
+
+        <script type="text/javascript">
+        buttonStatus[ <?php echo $pid; ?> ] = 0;
+        </script>
+
     <div class="row marketing">
       <div class="col-lg-1">
         &nbsp;
@@ -95,8 +143,8 @@
       </div>
 
       <div class="col-lg-3">
-        <button type="button" class="btn btn-default">Yes</button> <button type="button"
-        class="btn btn-default">No</button>
+        <button type="button" class="btn btn-default" id="<?php echo $pid; ?>_yes" onclick="yesClick( <?php echo $pid; ?> );">Yes</button> <button type="button"
+        class="btn btn-default" id="<?php echo $pid; ?>_no" onclick="noClick( <?php echo $pid; ?> );">No</button>
       </div>
     </div>
     <?php
