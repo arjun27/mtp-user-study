@@ -47,6 +47,25 @@
     $(no).addClass("btn-danger");       
   }
  }
+
+ function submitButton () {
+  // check if all are marked
+  for (var key in buttonStatus) {
+    if (buttonStatus[key] == 0) {
+      page_div = "#" + key + "_main";
+      window.scrollTo(0, $(page_div).offset().top);
+      $(page_div).effect("highlight", {}, 1500);
+      return 0;
+    }
+  }
+  // send data
+  data = JSON.stringify(buttonStatus);
+  request = $.post("write_results.php", { "data": data } );
+  request.done(function( data ) {
+    alert( "Data Loaded: " + data );
+  });
+  console.log("sent data");
+ }
 </script>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -76,7 +95,8 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-  <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"> </script>
+  <script src="dist/js/jquery-1.10.2.js" type="text/javascript"> </script>
+  <script src="dist/js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"> </script>
 </head>
 
 <body>
@@ -130,7 +150,7 @@
         buttonStatus[ <?php echo $pid; ?> ] = 0;
         </script>
 
-    <div class="row marketing">
+    <div class="row marketing" id="<?php echo $pid; ?>_main">
       <div class="col-lg-1">
         &nbsp;
       </div>
@@ -152,7 +172,7 @@
     ?>
 
     <div class="center-block text-center">
-      <button type="button" class="btn btn-success btn-lg">Submit</button>
+      <button type="button" class="btn btn-success btn-lg" onclick="submitButton();">Submit</button>
     </div>
 
     <div class="clearfix">
