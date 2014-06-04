@@ -1,3 +1,13 @@
+<?php
+  
+  $user = 1017459457;
+  $pids_file_name = 'pids_list';
+
+  $raw_pids = file_get_contents($pids_file_name);
+  $pids_array = explode(',', $raw_pids)
+
+?>
+
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="utf-8" />
@@ -14,10 +24,10 @@
   <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
   <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
-  <script src="dist/assets/js/ie-emulation-modes-warning.js" type="text/javascript">
+  <script src="dist/js/ie-emulation-modes-warning.js" type="text/javascript">
 </script><!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 
-  <script src="dist/assets/js/ie10-viewport-bug-workaround.js" type="text/javascript">
+  <script src="dist/js/ie10-viewport-bug-workaround.js" type="text/javascript">
 </script>
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -57,61 +67,31 @@
       "https://graph.facebook.com/91290503700/picture?width=75&amp;height=75" /></div>
 
       <div class="col-lg-6">
-        <h4>Inception</h4>
-      </div>
-
-      <div class="col-lg-3">
-        <button type="button" class="btn btn-default">Yes</button> <button type="button"
-        class="btn btn-default">No</button>
-      </div>
-    </div>
-
-    <div class="row marketing">
-      <div class="col-lg-1">
-        &nbsp;
-      </div>
-
-      <div class="col-lg-2"><img src=
-      "https://graph.facebook.com/307909672574831/picture?width=75&amp;height=75" /></div>
-
-      <div class="col-lg-6">
-        <h4>Eternal Sunshine of the Spotless Mind</h4>
+        <h4>Inception (Test)</h4>
       </div>
 
       <div class="col-lg-3">
         <button type="button" class="btn btn-success">Yes</button> <button type="button"
-        class="btn btn-default">No</button>
-      </div>
-    </div>
-
-    <div class="row marketing">
-      <div class="col-lg-1">
-        &nbsp;
-      </div>
-
-      <div class="col-lg-2"><img src=
-      "https://graph.facebook.com/118044381262/picture?width=75&amp;height=75" /></div>
-
-      <div class="col-lg-6">
-        <h4>The Adjustment Bureau</h4>
-      </div>
-
-      <div class="col-lg-3">
-        <button type="button" class="btn btn-default">Yes</button> <button type="button"
         class="btn btn-danger">No</button>
       </div>
     </div>
 
+    <?php 
+      foreach ($pids_array as $pid) {
+        // get page name
+        $page_json_raw = file_get_contents('http://graph.facebook.com/'.$pid);
+        $page_data = json_decode($page_json_raw);
+        ?>
     <div class="row marketing">
       <div class="col-lg-1">
         &nbsp;
       </div>
 
       <div class="col-lg-2"><img src=
-      "https://graph.facebook.com/23919966078/picture?width=75&amp;height=75" /></div>
+      "https://graph.facebook.com/<?php echo $pid; ?>/picture?width=75&amp;height=75" /></div>
 
       <div class="col-lg-6">
-        <h4>Back To the Future</h4>
+        <h4><?php echo $page_data->name; ?></h4>
       </div>
 
       <div class="col-lg-3">
@@ -119,42 +99,9 @@
         class="btn btn-default">No</button>
       </div>
     </div>
-
-    <div class="row marketing">
-      <div class="col-lg-1">
-        &nbsp;
-      </div>
-
-      <div class="col-lg-2"><img src=
-      "https://graph.facebook.com/181221288646788/picture?width=75&amp;height=75" /></div>
-
-      <div class="col-lg-6">
-        <h4>The Terminator</h4>
-      </div>
-
-      <div class="col-lg-3">
-        <button type="button" class="btn btn-default">Yes</button> <button type="button"
-        class="btn btn-danger">No</button>
-      </div>
-    </div>
-
-    <div class="row marketing">
-      <div class="col-lg-1">
-        &nbsp;
-      </div>
-
-      <div class="col-lg-2"><img src=
-      "https://graph.facebook.com/116203018390242/picture?width=75&amp;height=75" /></div>
-
-      <div class="col-lg-6">
-        <h4>Se7en</h4>
-      </div>
-
-      <div class="col-lg-3">
-        <button type="button" class="btn btn-success">Yes</button> <button type="button"
-        class="btn btn-default">No</button>
-      </div>
-    </div>
+    <?php
+      }
+    ?>
 
     <div class="center-block text-center">
       <button type="button" class="btn btn-success btn-lg">Submit</button>
@@ -162,40 +109,18 @@
 
     <div class="clearfix">
       &nbsp;
-    </div><!--    https://graph.facebook.com/91290503700/picture?width=100&height=100
-
-        <div class="col-lg-6">
-          <h4>Subheading</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-          <h4>Subheading</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-          <h4>Subheading</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-        </div>
-
-        <div class="col-lg-6">
-          <h4>Subheading</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-          <h4>Subheading</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-          <h4>Subheading</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-        </div> -->
+    </div>
 
     <div class="row marketing">
       <div class="col-lg-6">
-        <h4>Information</h4>
+        <h4>About</h4>
 
         <p>Relevance of pages will determine the success of our algorithms which we might
         or might not tell you in the end depending on whether the results are nice.</p>
       </div>
 
       <div class="col-lg-6">
-        <h4>About</h4>
+        <h4>Contact</h4>
 
         <p>This is a part of a research project at Department of Computer Science and
         Engineering, IIT Delhi. A few of the people are also involved.</p>
