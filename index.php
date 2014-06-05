@@ -7,24 +7,25 @@
     'secret' => getenv('FACEBOOK_SECRET'),
   ));
 
-  $user = $facebook->getUser();
+  // $user = $facebook->getUser();
 
-  if ($user) {
-    try {
-      // Proceed knowing you have a logged in user who's authenticated.
-      $user_profile = $facebook->api('/me');
-      echo $user_profile;
-    } catch (FacebookApiException $e) {
-      error_log($e);
-      $user = null;
-    }
-  }
+  // if ($user) {
+  //   try {
+  //     // Proceed knowing you have a logged in user who's authenticated.
+  //     $user_profile = $facebook->api('/me');
+  //     echo $user_profile;
+  //   } catch (FacebookApiException $e) {
+  //     error_log($e);
+  //     $user = null;
+  //   }
+  // }
 
   $main_url = 'main.php';
   $loginUrl = $facebook->getLoginUrl(array(
         'scope' => 'email',
         'redirect_uri' => $main_url
       ));
+  
   echo $loginUrl;
 
   // Login or logout url will be needed depending on current user state.
