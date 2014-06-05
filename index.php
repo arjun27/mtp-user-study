@@ -20,7 +20,7 @@
     }
   }
 
-  $main_url = 'main.php'
+  $main_url = 'main.php';
 
   // Login or logout url will be needed depending on current user state.
   if ($user) {
