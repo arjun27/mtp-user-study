@@ -1,3 +1,38 @@
+<?php 
+
+  require 'facebook-php-sdk/src/facebook.php';
+
+  $facebook = new Facebook(array(
+    'appId'  => getenv('FACEBOOK_APP_ID'),
+    'secret' => getenv('FACEBOOK_SECRET'),
+  ));
+
+  $user = $facebook->getUser();
+
+  if ($user) {
+    try {
+      // Proceed knowing you have a logged in user who's authenticated.
+      $user_profile = $facebook->api('/me');
+      echo $user_profile;
+    } catch (FacebookApiException $e) {
+      error_log($e);
+      $user = null;
+    }
+  }
+
+  // Login or logout url will be needed depending on current user state.
+  if ($user) {
+    $logoutUrl = $facebook->getLogoutUrl();
+  } else {
+    $statusUrl = $facebook->getLoginStatusUrl();
+    $loginUrl = $facebook->getLoginUrl(array(
+        'redirect_uri' => $main_url
+      ));
+    echo $loginUrl;
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -45,7 +80,7 @@
       <div class="jumbotron">
         <h1>Relevance</h1>
         <p class="lead"> Login below to continue. Decide whether the pages are relevant to the query or not. Improve this description. </p>
-        <p><a class="btn btn-lg btn-primary" href="#" role="button">Login with Facebook</a></p>
+        <p><a class="btn btn-lg btn-primary" href="<?php echo $loginUrl; ?>" role="button">Login with Facebook</a></p>
       </div>
 
       <div class="row marketing">
