@@ -22,12 +22,13 @@
 
   $main_url = 'main.php';
   $loginUrl = $facebook->getLoginUrl(array(
+        'scope' => 'email',
         'redirect_uri' => $main_url
       ));
   echo $loginUrl;
 
   // Login or logout url will be needed depending on current user state.
-  
+
   // if ($user) {
   //   $logoutUrl = $facebook->getLogoutUrl();
   // } else {
