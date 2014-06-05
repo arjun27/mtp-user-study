@@ -13,7 +13,7 @@
 
   $basic = $facebook->api('/me');
 
-  echo $basic;
+  print_r ( $basic );
 
   $user = 1017459457;
   $pids_file_name = 'pids_list';
