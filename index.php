@@ -1,6 +1,6 @@
 <?php 
 
-  require 'facebook-php-sdk/src/facebook.php';
+  require 'facebook-sdk/facebook.php';
 
   $facebook = new Facebook(array(
     'appId'  => getenv('FACEBOOK_APP_ID'),
@@ -19,6 +19,8 @@
       $user = null;
     }
   }
+
+  $main_url = 'main.php'
 
   // Login or logout url will be needed depending on current user state.
   if ($user) {
