@@ -4,7 +4,7 @@
   $pids_file_name = 'pids_list';
 
   $raw_pids = file_get_contents($pids_file_name);
-  $pids_array = explode(',', $raw_pids)
+  $pids_array = explode(',', $raw_pids);
 
 ?>
 
