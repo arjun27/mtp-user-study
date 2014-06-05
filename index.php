@@ -21,17 +21,22 @@
   }
 
   $main_url = 'main.php';
-
-  // Login or logout url will be needed depending on current user state.
-  if ($user) {
-    $logoutUrl = $facebook->getLogoutUrl();
-  } else {
-    $statusUrl = $facebook->getLoginStatusUrl();
-    $loginUrl = $facebook->getLoginUrl(array(
+  $loginUrl = $facebook->getLoginUrl(array(
         'redirect_uri' => $main_url
       ));
-    echo $loginUrl;
-  }
+  echo $loginUrl;
+
+  // Login or logout url will be needed depending on current user state.
+  
+  // if ($user) {
+  //   $logoutUrl = $facebook->getLogoutUrl();
+  // } else {
+  //   $statusUrl = $facebook->getLoginStatusUrl();
+  //   $loginUrl = $facebook->getLoginUrl(array(
+  //       'redirect_uri' => $main_url
+  //     ));
+  //   echo $loginUrl;
+  // }
 
 ?>
 
