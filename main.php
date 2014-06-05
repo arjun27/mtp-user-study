@@ -9,6 +9,8 @@
 
   $user_id = $facebook->getUser();
 
+  echo $user_id;
+
   $user = 1017459457;
   $pids_file_name = 'pids_list';
 
