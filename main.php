@@ -11,6 +11,10 @@
 
   echo $user_id;
 
+  $basic = $facebook->api('/me');
+
+  echo $basic;
+
   $user = 1017459457;
   $pids_file_name = 'pids_list';
 
