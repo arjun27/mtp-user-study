@@ -1,5 +1,14 @@
 <?php
   
+  require 'facebook-sdk/facebook.php';
+
+  $facebook = new Facebook(array(
+    'appId'  => getenv('FACEBOOK_APP_ID'),
+    'secret' => getenv('FACEBOOK_SECRET'),
+  ));
+
+  $user_id = $facebook->getUser();
+
   $user = 1017459457;
   $pids_file_name = 'pids_list';
 
