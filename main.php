@@ -141,6 +141,9 @@
         // get page name
         $page_json_raw = file_get_contents('http://graph.facebook.com/'.$pid);
         $page_data = json_decode($page_json_raw);
+        
+        if ( strlen ( $page_data->name ) == 0 )
+          break;
         ?>
 
         <script type="text/javascript">

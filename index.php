@@ -9,7 +9,6 @@
 
   $main_url = 'http://boiling-sea-9988.herokuapp.com/main.php';
   $loginUrl = $facebook->getLoginUrl(array(
-        'scope' => 'email',
         'redirect_uri' => $main_url
       ));
 
