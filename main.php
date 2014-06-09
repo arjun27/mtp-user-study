@@ -130,12 +130,12 @@
     </div>
 
     <div class="jumbotron">
-      <h1> User feedback </h1>
+      <h1> Feedback </h1>
 
       <p class="lead">Our search algorithms have generated the following results, do 
       you think these are relevant to the query? Mark yes or no!</p>
 
-      <p><a class="btn-lg btn-warning" href="#">query: <strong><?php echo $query_text; ?></strong></a></p>
+      <p><a class="btn btn-lg btn-warning" href="#">query: <strong><?php echo $query_text; ?></strong></a></p>
     </div>
 
     <?php 
