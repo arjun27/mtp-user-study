@@ -130,11 +130,12 @@
     </div>
 
     <div class="jumbotron">
-      <h1>Relevance</h1>
+      <h1> User feedback </h1>
 
-      <p class="lead">Do you think the pages are relevant to the query?</p>
+      <p class="lead">Our search algorithms have generated the following results, do 
+      you think these are relevant to the query? Mark yes or no!</p>
 
-      <p><a class="btn-lg btn-warning" href="#"><?php echo $query_text; ?></a></p>
+      <p><a class="btn-lg btn-warning" href="#">query: <strong><?php echo $query_text; ?></strong></a></p>
     </div>
 
     <?php 
@@ -182,7 +183,7 @@
 
     <div class="row marketing">
       <div class="col-lg-6">
-        <h4><a name="about">&nbsp;</a>About</h4>
+        <h4>About<a name="about">&nbsp;</a></h4>
 
         <p>Like Minded is a pursuit in improving search through social data, and we need your help 
         to determine the effectiveness of our algorithms. The data you share with us will be 
@@ -191,7 +192,7 @@
       </div>
 
       <div class="col-lg-6">
-        <h4><a name="contact">&nbsp;</a>Contact</h4>
+        <h4>Contact<a name="contact">&nbsp;</a></h4>
 
         <p>Like Minded is a research project at the Department of Computer Science and
         Engineering, IIT Delhi. For more information please         

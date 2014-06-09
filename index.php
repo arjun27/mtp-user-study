@@ -69,7 +69,7 @@
 
     <div class="row marketing">
       <div class="col-lg-6">
-        <h4><a name="about">&nbsp;</a>About</h4>
+        <h4>About<a name="about">&nbsp;</a></h4>
 
         <p>Like Minded is a pursuit in improving search through social data, and it needs your help 
         to determine the strength of our algorithms. The data you share with us will be anonymized
@@ -78,7 +78,7 @@
       </div>
 
       <div class="col-lg-6">
-        <h4><a name="contact">&nbsp;</a>Contact</h4>
+        <h4>Contact<a name="contact">&nbsp;</a></h4>
 
         <p>Like Minded is a research project at the Department of Computer Science and
         Engineering, IIT Delhi. For more information please 
