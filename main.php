@@ -9,10 +9,9 @@
 
   $user_id = $facebook->getUser();
 
-  // echo $user_id;
-
-  $basic = $facebook->api('/me');
-
+  if ($user_id) {
+    $basic = $facebook->api('/me');
+  }
   // print_r ( $basic );
 
   $user = 1017459457;
@@ -20,6 +19,8 @@
 
   $raw_pids = file_get_contents($pids_file_name);
   $pids_array = explode(',', $raw_pids);
+
+  $query_text = 'quentin tarantino';
 
 ?>
 
@@ -133,7 +134,7 @@
 
       <p class="lead">Do you think the pages are relevant to the query?</p>
 
-      <p><a class="btn btn-lg btn-warning" href="#">query text</a></p>
+      <p><a class="btn btn-lg btn-warning" href="#"><?php echo $query_text; ?></a></p>
     </div>
 
     <?php 
