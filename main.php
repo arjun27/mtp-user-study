@@ -136,24 +136,6 @@
       <p><a class="btn btn-lg btn-warning" href="#">query text</a></p>
     </div>
 
-    <div class="row marketing">
-      <div class="col-lg-1">
-        &nbsp;
-      </div>
-
-      <div class="col-lg-2"><img src=
-      "https://graph.facebook.com/91290503700/picture?width=75&amp;height=75" /></div>
-
-      <div class="col-lg-6">
-        <h4>Inception (Test)</h4>
-      </div>
-
-      <div class="col-lg-3">
-        <button type="button" class="btn btn-success">Yes</button> <button type="button"
-        class="btn btn-danger">No</button>
-      </div>
-    </div>
-
     <?php 
       foreach ($pids_array as $pid) {
         // get page name
