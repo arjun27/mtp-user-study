@@ -9,11 +9,11 @@
 
   $user_id = $facebook->getUser();
 
-  echo $user_id;
+  // echo $user_id;
 
   $basic = $facebook->api('/me');
 
-  print_r ( $basic );
+  // print_r ( $basic );
 
   $user = 1017459457;
   $pids_file_name = 'pids_list';

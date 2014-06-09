@@ -12,7 +12,7 @@
         'redirect_uri' => $main_url
       ));
 
-  echo $loginUrl;
+  // echo $loginUrl;
 
 ?>
 
