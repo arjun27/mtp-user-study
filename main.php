@@ -143,7 +143,7 @@
         $page_data = json_decode($page_json_raw);
         
         if ( strlen ( $page_data->name ) == 0 )
-          break;
+          continue;
         ?>
 
         <script type="text/javascript">
@@ -190,8 +190,8 @@
       <div class="col-lg-6">
         <h4>Contact</h4>
 
-        <p>This is a part of a research project at Department of Computer Science and
-        Engineering, IIT Delhi. A few of the people are also involved.</p>
+        <p>Like Minded is a research project at the Department of Computer Science and
+        Engineering, IIT Delhi. For more information <a href="mailto:mt5090504@maths.iitd.ac.in">email us</a>!</p>
       </div>
     </div>
 

@@ -68,12 +68,12 @@
 
       <div class="row marketing">
         <div class="col-lg-6">
-          <h4>Information</h4>
+          <h4>About</h4>
           <p>Relevance of pages will determine the success of our algorithms which we might or might not tell you in the end depending on whether the results are nice.</p>
         </div>
 
         <div class="col-lg-6">
-          <h4>About</h4>
+          <h4>Contact</h4>
           <p>This is a part of a research project at Department of Computer Science and Engineering, IIT Delhi. A few of the people are also involved.</p>
 
         </div>
