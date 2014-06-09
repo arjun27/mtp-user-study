@@ -93,7 +93,7 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href="../../assets/ico/favicon.ico" />
 
-  <title>Like Minded / Relevance</title><!-- Bootstrap core CSS -->
+  <title>Like Minded / User study</title><!-- Bootstrap core CSS -->
   <link href="dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
   <!-- Custom styles for this template -->
   <link href="jumbotron-narrow.css" rel="stylesheet" type="text/css" />
@@ -121,9 +121,9 @@
       <ul class="nav nav-pills pull-right">
         <li class="active"><a href="#">Home</a></li>
 
-        <li><a href="#">About</a></li>
+        <li><a href="#about">About</a></li>
 
-        <li><a href="#">Contact</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
 
       <h3 class="text-muted">Like Minded</h3>
@@ -134,7 +134,7 @@
 
       <p class="lead">Do you think the pages are relevant to the query?</p>
 
-      <p><a class="btn btn-lg btn-warning" href="#"><?php echo $query_text; ?></a></p>
+      <p><a class="btn-lg btn-warning" href="#"><?php echo $query_text; ?></a></p>
     </div>
 
     <?php 
@@ -182,17 +182,20 @@
 
     <div class="row marketing">
       <div class="col-lg-6">
-        <h4>About</h4>
+        <h4><a name="about">About</a></h4>
 
-        <p>Relevance of pages will determine the success of our algorithms which we might
-        or might not tell you in the end depending on whether the results are nice.</p>
+        <p>Like Minded is a pursuit in improving search through social data, and it needs your help 
+        to determine the strength of our algorithms. The data you share with us will be anonymized
+        and secure and only be used for research purposes.</p>
+
       </div>
 
       <div class="col-lg-6">
-        <h4>Contact</h4>
+        <h4><a name="contact">Contact</a></h4>
 
         <p>Like Minded is a research project at the Department of Computer Science and
-        Engineering, IIT Delhi. For more information <a href="mailto:mt5090504@maths.iitd.ac.in">email us</a>!</p>
+        Engineering, IIT Delhi. For more information please 
+        <a href="mailto:mt5090504@maths.iitd.ac.in">email us</a>!</p>
       </div>
     </div>
 

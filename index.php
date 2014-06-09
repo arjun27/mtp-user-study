@@ -26,7 +26,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
-    <title>Like Minded / Relevance</title>
+    <title>Like Minded / User study</title>
 
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
@@ -54,8 +54,8 @@
       <div class="header">
         <ul class="nav nav-pills pull-right">
           <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
         <h3 class="text-muted">Like Minded</h3>
       </div>
@@ -66,18 +66,25 @@
         <p><a class="btn btn-lg btn-primary" href="<?php echo $loginUrl; ?>" role="button">Login with Facebook</a></p>
       </div>
 
-      <div class="row marketing">
-        <div class="col-lg-6">
-          <h4>About</h4>
-          <p>Relevance of pages will determine the success of our algorithms which we might or might not tell you in the end depending on whether the results are nice.</p>
-        </div>
+    <div class="row marketing">
+      <div class="col-lg-6">
+        <h4><a name="about">About</a></h4>
 
-        <div class="col-lg-6">
-          <h4>Contact</h4>
-          <p>This is a part of a research project at Department of Computer Science and Engineering, IIT Delhi. A few of the people are also involved.</p>
+        <p>Like Minded is a pursuit in improving search through social data, and it needs your help 
+        to determine the strength of our algorithms. The data you share with us will be anonymized
+        and secure and only be used for research purposes.</p>
 
-        </div>
       </div>
+
+      <div class="col-lg-6">
+        <h4><a name="contact">Contact</a></h4>
+
+        <p>Like Minded is a research project at the Department of Computer Science and
+        Engineering, IIT Delhi. For more information please 
+        <a href="mailto:mt5090504@maths.iitd.ac.in">email us</a>!</p>
+      </div>
+    </div>
+
 
       <div class="footer">
         <p>IIT Delhi, 2014</p>
