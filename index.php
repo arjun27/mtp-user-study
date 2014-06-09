@@ -26,7 +26,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
-    <title>Like Minded / User study</title>
+    <title>Like Minded / User feedback</title>
 
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
@@ -61,14 +61,15 @@
       </div>
 
       <div class="jumbotron">
-        <h1>Relevance</h1>
-        <p class="lead"> Login below to continue. Decide whether the pages are relevant to the query or not. Improve this description. </p>
+        <h1>User feedback</h1>
+        <p class="lead"> The Like Minded project needs your feedback! 
+        Please login below to continue. </p>
         <p><a class="btn btn-lg btn-primary" href="<?php echo $loginUrl; ?>" role="button">Login with Facebook</a></p>
       </div>
 
     <div class="row marketing">
       <div class="col-lg-6">
-        <h4><a name="about">About</a></h4>
+        <h4><a name="about">&nbsp;</a>About</h4>
 
         <p>Like Minded is a pursuit in improving search through social data, and it needs your help 
         to determine the strength of our algorithms. The data you share with us will be anonymized
@@ -77,7 +78,7 @@
       </div>
 
       <div class="col-lg-6">
-        <h4><a name="contact">Contact</a></h4>
+        <h4><a name="contact">&nbsp;</a>Contact</h4>
 
         <p>Like Minded is a research project at the Department of Computer Science and
         Engineering, IIT Delhi. For more information please 

@@ -182,19 +182,19 @@
 
     <div class="row marketing">
       <div class="col-lg-6">
-        <h4><a name="about">About</a></h4>
+        <h4><a name="about">&nbsp;</a>About</h4>
 
-        <p>Like Minded is a pursuit in improving search through social data, and it needs your help 
-        to determine the strength of our algorithms. The data you share with us will be anonymized
-        and secure and only be used for research purposes.</p>
+        <p>Like Minded is a pursuit in improving search through social data, and we need your help 
+        to determine the effectiveness of our algorithms. The data you share with us will be 
+        secure and only be used for research purposes.</p>
 
       </div>
 
       <div class="col-lg-6">
-        <h4><a name="contact">Contact</a></h4>
+        <h4><a name="contact">&nbsp;</a>Contact</h4>
 
         <p>Like Minded is a research project at the Department of Computer Science and
-        Engineering, IIT Delhi. For more information please 
+        Engineering, IIT Delhi. For more information please         
         <a href="mailto:mt5090504@maths.iitd.ac.in">email us</a>!</p>
       </div>
     </div>
