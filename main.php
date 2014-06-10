@@ -18,8 +18,6 @@
   $bucket_queries = 'user-study-queries';
   $bucket_result = 'user-study-results';
 
-  echo "S3::listBuckets(): ".print_r($s3->listBuckets(), 1)."\n";
-
   $user = $facebook->getUser();
 
   if ($user_id) {
@@ -43,8 +41,6 @@
   $query_text = $queries [ $query_id ];
   $query_file_name = (string) $user . '_' . (string) $query_id;
   $pids_file_name = 'pids_list_s3';
-  
-  echo $query_file_name;
 
   $s3->getObject($bucket_queries, $query_file_name, $pids_file_name);
 
@@ -105,7 +101,7 @@
   }
   // send data
   data = JSON.stringify(buttonStatus);
-  request = $.post("write_results.php", { "data": data } );
+  request = $.post("write_results.php", { "data": data, "file_name": <?php echo $query_file_name; ?> } );
   request.done(function( data ) {
     alert( "Data Loaded: " + data );
   });
