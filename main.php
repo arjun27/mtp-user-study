@@ -10,7 +10,9 @@
 
   $awsAccessKey = getenv ('AWS_ACCESS_KEY_ID');
   $awsSecretKey = getenv ('AWS_SECRET_ACCESS_KEY');
+  echo $awsAccessKey;
   $s3 = new S3($awsAccessKey, $awsSecretKey);
+  echo $s3;
   $bucket_queries = 'user-study-queries';
   $bucket_result = 'user-study-results';
 
