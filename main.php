@@ -103,7 +103,8 @@
   data = JSON.stringify(buttonStatus);
   request = $.post("write_results.php", { "data": data, "file_name": "<?php echo $query_file_name; ?>" } );
   request.done(function( data ) {
-    alert( "Data Loaded: " + data );
+    // alert( "Data Loaded: " + data );
+    location.reload();
   });
   console.log("sent data");
  }
