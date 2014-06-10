@@ -1,12 +1,18 @@
 <?php
   
   require 'facebook-sdk/facebook.php';
-  require 's3_config.php';
+  require 's3-sdk.php';
 
   $facebook = new Facebook(array(
     'appId'  => getenv('FACEBOOK_APP_ID'),
     'secret' => getenv('FACEBOOK_SECRET'),
   ));
+
+  $awsAccessKey = getenv ('AWS_ACCESS_KEY_ID');
+  $awsSecretKey = getenv ('AWS_SECRET_ACCESS_KEY');
+  $s3 = new S3($awsAccessKey, $awsSecretKey);
+  $bucket_queries = 'user-study-queries';
+  $bucket_result = 'user-study-results';
 
   $user = $facebook->getUser();
 
