@@ -13,5 +13,5 @@
     $bucket_queries = 'user-study-queries';
     $bucket_result = 'user-study-results';
 
-    $s3->putObject($data, $bucket_result, $file_name, S3::ACL_PUBLIC_READ, array(), array('Content-Type' => 'text/plain'));
+    $s3->putObject(( string ) $data, $bucket_result, $file_name, S3::ACL_PUBLIC_READ, array(), array('Content-Type' => 'text/plain'));
 ?>
