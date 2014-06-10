@@ -44,6 +44,8 @@
   $query_file_name = (string) $user . '_' . (string) $query_id;
   $pids_file_name = 'pids_list_s3';
   
+  echo $query_file_name;
+
   $s3->getObject($bucket_queries, $query_file_name, $pids_file_name);
 
   $raw_pids = file_get_contents($pids_file_name);
