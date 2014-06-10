@@ -1,26 +1,40 @@
 <?php
   
   require 'facebook-sdk/facebook.php';
+  require 's3_config.php';
 
   $facebook = new Facebook(array(
     'appId'  => getenv('FACEBOOK_APP_ID'),
     'secret' => getenv('FACEBOOK_SECRET'),
   ));
 
-  $user_id = $facebook->getUser();
+  $user = $facebook->getUser();
 
   if ($user_id) {
     $basic = $facebook->api('/me');
   }
-  // print_r ( $basic );
 
-  $user = 1017459457;
-  $pids_file_name = 'pids_list';
+  $queries = array (
+    0 => 'comedy movies',
+    1 => 'horror movies',
+    2 => 'sci-fi movies',
+    3 => 'hindi movies',
+    4 => 'quentin tarantino',
+    5 => 'robert downey jr',
+    6 => 'oscars 2012',
+    7 => 'guy ritchie'
+  );
+
+  // get pids_file_name and query_text from s3
+  // TO DO: check for dulpicate queries
+  $query_id = rand ( 0, sizeof( $queries ) - 1);
+  $query_text = $queries [ $query_id ];
+  $query_file_name = (string) $user . '_' . (string) $query_id;
+  $pids_file_name = 'pids_list'
+  s3::getObject($bucket_queries, $query_file_name, $pids_file_name)
 
   $raw_pids = file_get_contents($pids_file_name);
   $pids_array = explode(',', $raw_pids);
-
-  $query_text = 'quentin tarantino';
 
 ?>
 
