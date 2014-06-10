@@ -8,13 +8,17 @@
     'secret' => getenv('FACEBOOK_SECRET'),
   ));
 
-  $awsAccessKey = getenv ('AWS_ACCESS_KEY_ID');
-  $awsSecretKey = getenv ('AWS_SECRET_ACCESS_KEY');
-  echo $awsAccessKey;
-  $s3 = new S3($awsAccessKey, $awsSecretKey);
-  echo $s3;
+  // $awsAccessKey = getenv ('AWS_ACCESS_KEY_ID');
+  // $awsSecretKey = getenv ('AWS_SECRET_ACCESS_KEY');
+  if (!defined('awsAccessKey')) define('awsAccessKey', getenv ('AWS_ACCESS_KEY_ID') );
+  if (!defined('awsSecretKey')) define('awsSecretKey', getenv ('AWS_SECRET_ACCESS_KEY') );
+
+  $s3 = new S3(awsAccessKey, awsSecretKey);
+  
   $bucket_queries = 'user-study-queries';
   $bucket_result = 'user-study-results';
+
+  echo "S3::listBuckets(): ".print_r($s3->listBuckets(), 1)."\n";
 
   $user = $facebook->getUser();
 
