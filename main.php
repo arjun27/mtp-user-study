@@ -42,9 +42,9 @@
   $query_id = rand ( 0, sizeof( $queries ) - 1);
   $query_text = $queries [ $query_id ];
   $query_file_name = (string) $user . '_' . (string) $query_id;
-  $pids_file_name = 'pids_list'
+  $pids_file_name = 'pids_list';
   
-  //$s3->getObject($bucket_queries, $query_file_name, $pids_file_name)
+  $s3->getObject($bucket_queries, $query_file_name, $pids_file_name);
 
   $raw_pids = file_get_contents($pids_file_name);
   $pids_array = explode(',', $raw_pids);
